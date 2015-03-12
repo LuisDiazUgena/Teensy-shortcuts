@@ -18,13 +18,13 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
 
 1. Connect the pushbutton to a digital pin. Use a pulldown resistror to pushbuttons.
 2. Create a Bounce objet to debounce the pushbutton:
-
+<pre lang="arduino"><code>
   Bounce *name_of_your_button* = Bounce(*pin_of_your_button*,10);
-
+</code></pre>
 3. Use:
-
+<pre lang="arduino"><code>
   pinMode(*pinNumer or variable*,INPUT);
-
+</code></pre>
 4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
 <pre lang="arduino"><code>
 
@@ -50,8 +50,8 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
 Check out your favorite program shortcuts and know which key combination activate them, then go to [teensy keys](https://www.pjrc.com/teensy/td_keyboard.html) and look for your keys combination.
 
 Place them inside of:
-    
-    if (<name_of_your_button>.risingEdge()){
+<pre lang="arduino"><code>    
+    if (*name_of_your_button*.risingEdge()){
       //Send keystrokes
     }
-
+</code></pre>
