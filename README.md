@@ -21,23 +21,19 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
   Bounce <name_of_your_button> = Bounce(<pin_of_your_button>,10);
 3. Use:
   pinMode(<pinNumer or variable>,INPUT);
-4. At loop:
-  Update the button:
-    <name_of_your_button>.update();
-    i.e: If you named your button btn1:
-      btn1.update();
-    Use this for everybutton you have.
-  use:
-    
-    if (<name_of_your_button>.risingEdge()){
-      //Send keystrokes
-    }
-      
-  After sending keystrokes use:
-    Keyboard.set_modifier(0);
-    Keyboard.set_key1(0);
+4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
+
+  btn1.update();
+
+  if (btn1.risingEdge()){
+    Serial.println("risingEdge btn1");
+    Keyboard.set_modifier(MODIFIERKEY_CTRL);
+    Keyboard.set_key1(KEY_R);
     Keyboard.send_now();
 
+  }
+
+  
 ## Add program profile
 
 -- To Do --
