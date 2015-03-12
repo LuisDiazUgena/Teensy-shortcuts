@@ -23,7 +23,7 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
   pinMode(<pinNumer or variable>,INPUT);
 4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
 
-  btn1.update();
+  <btn1.update();
  
   
   if (btn1.risingEdge()){
@@ -32,7 +32,7 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
     Keyboard.set_key1(KEY_R);
     Keyboard.send_now();
 
-  }
+  }>
 
 ## Add program profile
 
