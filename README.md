@@ -18,15 +18,15 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
 
 1. Connect the pushbutton to a digital pin. Use a pulldown resistror to pushbuttons.
 2. Create a Bounce objet to debounce the pushbutton:
-  *Bounce <name_of_your_button> = Bounce(<pin_of_your_button>,10);*
+  Bounce <name_of_your_button> = Bounce(<pin_of_your_button>,10);
 3. Use:
-  *pinMode(<pinNumer or variable>,INPUT);*
+  pinMode(<pinNumer or variable>,INPUT);
 4. At loop:
   Update the button:
-    *<name_of_your_button>.update();*
+    <name_of_your_button>.update();
     i.e: If you named your button btn1:
-      *btn1.update();*
-    Use this for everybutton you have
+      btn1.update();
+    Use this for everybutton you have.
   use:
     
     if (<name_of_your_button>.risingEdge()){
