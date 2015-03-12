@@ -18,12 +18,17 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
 
 1. Connect the pushbutton to a digital pin. Use a pulldown resistror to pushbuttons.
 2. Create a Bounce objet to debounce the pushbutton:
-  Bounce <name_of_your_button> = Bounce(<pin_of_your_button>,10);
-3. Use:
-  pinMode(<pinNumer or variable>,INPUT);
-4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
 
-  <btn1.update();
+  Bounce *name_of_your_button* = Bounce(*pin_of_your_button*,10);
+
+3. Use:
+
+  pinMode(*pinNumer or variable*,INPUT);
+
+4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
+<pre lang="arduino"><code>
+
+  btn1.update();
  
   
   if (btn1.risingEdge()){
@@ -32,7 +37,9 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
     Keyboard.set_key1(KEY_R);
     Keyboard.send_now();
 
-  }>
+  }
+</code></pre>
+
 
 ## Add program profile
 
