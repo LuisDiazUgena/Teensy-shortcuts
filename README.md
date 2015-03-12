@@ -26,6 +26,7 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
   pinMode(*pinNumer or variable*,INPUT);
 </code></pre>
 4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
+
 <pre lang="arduino"><code>
 
   btn1.update();
@@ -51,7 +52,7 @@ Check out your favorite program shortcuts and know which key combination activat
 
 Place them inside of:
 <pre lang="arduino"><code>    
-    if (*name_of_your_button*.risingEdge()){
+    if (name_of_your_button.risingEdge()){
       //Send keystrokes
     }
 </code></pre>
