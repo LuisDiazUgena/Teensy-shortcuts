@@ -62,18 +62,18 @@ void setup() {
 
 //Profile1
 strcpy (profile1.name,"Arduino IDE");
-strcpy (profile1.shorcut1,"Compilate");
+strcpy (profile1.shorcut1,"Verify");
 strcpy (profile1.shorcut2,"Upload");
 strcpy (profile1.shorcut3,"Monitor");
-strcpy (profile1.shorcut4,"Save");
+strcpy (profile1.shorcut4,"AutoFormat");
+
 //profile2
-strcpy (profile2.name,"Inkscape");
-strcpy (profile2.shorcut1,"test1");
-strcpy (profile2.shorcut2,"test2");
-strcpy (profile2.shorcut3,"test3");
-strcpy (profile2.shorcut4,"test4");
-strcpy (profile2.shorcut5,"test5");
-strcpy (profile2.shorcut6,"test6");
+strcpy (profile2.name,"Sublime 3");
+strcpy (profile2.shorcut1,"Verify");
+strcpy (profile2.shorcut2,"Upload");
+strcpy (profile2.shorcut3,"Monitor");
+strcpy (profile2.shorcut4,"AutoFormat");
+
 //profile3
 strcpy (profile3.name,"Profile3");
 strcpy (profile3.shorcut1,"test1");
@@ -107,11 +107,11 @@ void profileActions(int aktProfile){
 
   switch (aktProfile) {
     case 1:
-     if (btn1.risingEdge()){
-        Keyboard.set_modifier(MODIFIERKEY_CTRL);
-        Keyboard.set_key1(KEY_R);
-        Keyboard.send_now();
-     }
+    if (btn1.risingEdge()){
+      Keyboard.set_modifier(MODIFIERKEY_CTRL);
+      Keyboard.set_key1(KEY_R);
+      Keyboard.send_now();
+    }
     if (btn2.risingEdge()){
       Keyboard.set_modifier(MODIFIERKEY_CTRL);
       Keyboard.set_key1(KEY_U);
@@ -126,44 +126,71 @@ void profileActions(int aktProfile){
     }          
     if (btn4.risingEdge()){
       Keyboard.set_modifier(MODIFIERKEY_CTRL);
-      Keyboard.set_key1(KEY_S);
+      Keyboard.set_key1(KEY_T);
       Keyboard.send_now();  
     }
     break;
     case 2:
-      // TODO --> add inkscape shorcuts
+      if (btn1.risingEdge()){
+        Keyboard.set_modifier(MODIFIERKEY_CTRL);
+        Keyboard.send_now();
+        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+        Keyboard.set_key1(KEY_V);
+        Keyboard.send_now();
+      }
+      if (btn2.risingEdge()){
+        Keyboard.set_modifier(MODIFIERKEY_CTRL);
+        Keyboard.send_now();
+        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+        Keyboard.set_key1(KEY_U);
+        Keyboard.send_now();
+      }
+      if (btn3.risingEdge()){
+        Keyboard.set_modifier(MODIFIERKEY_CTRL);
+        Keyboard.send_now();
+        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+        Keyboard.set_key1(KEY_M);
+        Keyboard.send_now();
+      }          
+      if (btn4.risingEdge()){
+        Keyboard.set_modifier(MODIFIERKEY_CTRL);
+        Keyboard.send_now();
+        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+        Keyboard.set_key1(KEY_O);
+        Keyboard.send_now(); 
+      }      
       break;
+
+    }
+
+    Keyboard.set_modifier(0);
+    Keyboard.set_key1(0);
+    Keyboard.send_now();
 
   }
 
-  Keyboard.set_modifier(0);
-  Keyboard.set_key1(0);
-  Keyboard.send_now();
-
-}
-
-int selectProfile(){
+  int selectProfile(){
 
 
-  int trimmer = 0;
+    int trimmer = 0;
   int threeshold = 256; //1023/4 = 255
 
   trimmer = analogRead(pinProfileSelector);
   
   if (trimmer < threeshold){
     return 1;
-  }else if(trimmer < 2*threeshold){
-    return 2;
-  }else if(trimmer < 3*threeshold){
-    return 3;
-  }else{
-    return 4;
-  }
-  
+    }else if(trimmer < 2*threeshold){
+      return 2;
+      }else if(trimmer < 3*threeshold){
+        return 3;
+        }else{
+          return 4;
+        }
 
-}
 
-void printProfile(int aktProfile){
+      }
+
+      void printProfile(int aktProfile){
 
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
@@ -177,71 +204,70 @@ void printProfile(int aktProfile){
   }
 
   lastProfile = aktProfile;
-  //Funcion que modifque los perfiles -- todo --
 
   switch (aktProfile) {
     case 1:
-      lcd.print(profile1.name);
-      lcd.setCursor(0,1);
-      lcd.print(profile1.shorcut1);
-      lcd.setCursor(11,1);
-      lcd.print(profile1.shorcut2);
-      lcd.setCursor(0,2);
-      lcd.print(profile1.shorcut3);
-      lcd.setCursor(11,2);
-      lcd.print(profile1.shorcut4);
-      lcd.setCursor(0,3);
-      lcd.print(profile1.shorcut5);
-      lcd.setCursor(11,3);
-      lcd.print(profile1.shorcut6);
-      break;
+    lcd.print(profile1.name);
+    lcd.setCursor(0,1);
+    lcd.print(profile1.shorcut1);
+    lcd.setCursor(10,1);
+    lcd.print(profile1.shorcut2);
+    lcd.setCursor(0,2);
+    lcd.print(profile1.shorcut3);
+    lcd.setCursor(10,2);
+    lcd.print(profile1.shorcut4);
+    lcd.setCursor(0,3);
+    lcd.print(profile1.shorcut5);
+    lcd.setCursor(10,3);
+    lcd.print(profile1.shorcut6);
+    break;
     case 2:
-      lcd.print(profile2.name);
-      lcd.setCursor(0,1);
-      lcd.print(profile2.shorcut1);
-      lcd.setCursor(11,1);
-      lcd.print(profile2.shorcut2);
-      lcd.setCursor(0,2);
-      lcd.print(profile2.shorcut3);
-      lcd.setCursor(11,2);
-      lcd.print(profile2.shorcut4);
-      lcd.setCursor(0,3);
-      lcd.print(profile2.shorcut5);
-      lcd.setCursor(11,3);
-      lcd.print(profile2.shorcut6);
-      
-      break;
+    lcd.print(profile2.name);
+    lcd.setCursor(0,1);
+    lcd.print(profile2.shorcut1);
+    lcd.setCursor(10,1);
+    lcd.print(profile2.shorcut2);
+    lcd.setCursor(0,2);
+    lcd.print(profile2.shorcut3);
+    lcd.setCursor(10,2);
+    lcd.print(profile2.shorcut4);
+    lcd.setCursor(0,3);
+    lcd.print(profile2.shorcut5);
+    lcd.setCursor(10,3);
+    lcd.print(profile2.shorcut6);
+
+    break;
     case 3:
-      lcd.print(profile3.name);
-      lcd.setCursor(0,1);
-      lcd.print(profile3.shorcut1);
-      lcd.setCursor(11,1);
-      lcd.print(profile3.shorcut2);
-      lcd.setCursor(0,2);
-      lcd.print(profile3.shorcut3);
-      lcd.setCursor(11,2);
-      lcd.print(profile3.shorcut4);
-      lcd.setCursor(0,3);
-      lcd.print(profile3.shorcut5);
-      lcd.setCursor(11,3);
-      lcd.print(profile3.shorcut6);
-      break;
+    lcd.print(profile3.name);
+    lcd.setCursor(0,1);
+    lcd.print(profile3.shorcut1);
+    lcd.setCursor(10,1);
+    lcd.print(profile3.shorcut2);
+    lcd.setCursor(0,2);
+    lcd.print(profile3.shorcut3);
+    lcd.setCursor(10,2);
+    lcd.print(profile3.shorcut4);
+    lcd.setCursor(0,3);
+    lcd.print(profile3.shorcut5);
+    lcd.setCursor(10,3);
+    lcd.print(profile3.shorcut6);
+    break;
     case 4:
-      lcd.print(profile4.name);
-      lcd.setCursor(0,1);
-      lcd.print(profile4.shorcut1);
-      lcd.setCursor(11,1);
-      lcd.print(profile4.shorcut2);
-      lcd.setCursor(0,2);
-      lcd.print(profile4.shorcut3);
-      lcd.setCursor(11,2);
-      lcd.print(profile4.shorcut4);
-      lcd.setCursor(0,3);
-      lcd.print(profile4.shorcut5);
-      lcd.setCursor(11,3);
-      lcd.print(profile4.shorcut6);
-      
-      break;      
+    lcd.print(profile4.name);
+    lcd.setCursor(0,1);
+    lcd.print(profile4.shorcut1);
+    lcd.setCursor(10,1);
+    lcd.print(profile4.shorcut2);
+    lcd.setCursor(0,2);
+    lcd.print(profile4.shorcut3);
+    lcd.setCursor(10,2);
+    lcd.print(profile4.shorcut4);
+    lcd.setCursor(0,3);
+    lcd.print(profile4.shorcut5);
+    lcd.setCursor(10,3);
+    lcd.print(profile4.shorcut6);
+
+    break;      
   }
 }
 
