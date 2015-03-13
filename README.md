@@ -52,7 +52,7 @@ Just click the button and let the magic happend!
 </code></pre>
 
 
-## Add program profile
+##How to: Add program profile
 
 Create a profile struct:
 <pre lang="arduino"><code>    
@@ -71,7 +71,7 @@ Add profile name and shorcuts names:
 
 Add shorcuts inside of <pre lang="arduino"><code>profileActions</code></pre> function
 
-## Add shorcuts
+##How to: Add shorcuts
 
 Check out your favorite program shortcuts and know which key combination activate them, then go to [teensy keys](https://www.pjrc.com/teensy/td_keyboard.html) and look for your keys combination.
 
