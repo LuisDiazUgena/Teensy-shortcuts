@@ -30,7 +30,8 @@ Bounce btn4 = Bounce(pinBtn4,10);
 //Profile Selector
 int aktProfile,profile_number=4;
 int lastProfile=0;
-//String profile1 = "Arduino IDE", profile2 = "Inkscape";
+
+//Profiles
 
 struct Profile profile1;
 struct Profile profile2;
@@ -53,7 +54,7 @@ void setup() {
   lcd.print("Teensy Shorcuts!");
   lcd.setCursor(0,3);
   lcd.print("Luis Diaz");
-  delay(750);
+  delay(1000);
   lcd.clear();
 
 //Add values to the struct
@@ -74,6 +75,7 @@ strcpy (profile2.shorcut2,"Upload");
 strcpy (profile2.shorcut3,"Monitor");
 strcpy (profile2.shorcut4,"AutoFormat");
 
+/*
 //profile3
 strcpy (profile3.name,"Profile3");
 strcpy (profile3.shorcut1,"test1");
@@ -87,7 +89,7 @@ strcpy (profile4.shorcut2,"test2");
 strcpy (profile4.shorcut3,"test3");
 strcpy (profile4.shorcut4,"test4");
 strcpy (profile4.shorcut6,"test6");
-
+*/
 }
 
 void loop() {
@@ -107,6 +109,7 @@ void profileActions(int aktProfile){
 
   switch (aktProfile) {
     case 1:
+    
     if (btn1.risingEdge()){
       Keyboard.set_modifier(MODIFIERKEY_CTRL);
       Keyboard.set_key1(KEY_R);
@@ -131,48 +134,48 @@ void profileActions(int aktProfile){
     }
     break;
     case 2:
-      if (btn1.risingEdge()){
-        Keyboard.set_modifier(MODIFIERKEY_CTRL);
-        Keyboard.send_now();
-        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
-        Keyboard.set_key1(KEY_V);
-        Keyboard.send_now();
-      }
-      if (btn2.risingEdge()){
-        Keyboard.set_modifier(MODIFIERKEY_CTRL);
-        Keyboard.send_now();
-        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
-        Keyboard.set_key1(KEY_U);
-        Keyboard.send_now();
-      }
-      if (btn3.risingEdge()){
-        Keyboard.set_modifier(MODIFIERKEY_CTRL);
-        Keyboard.send_now();
-        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
-        Keyboard.set_key1(KEY_M);
-        Keyboard.send_now();
-      }          
-      if (btn4.risingEdge()){
-        Keyboard.set_modifier(MODIFIERKEY_CTRL);
-        Keyboard.send_now();
-        Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
-        Keyboard.set_key1(KEY_O);
-        Keyboard.send_now(); 
-      }      
-      break;
-
+    if (btn1.risingEdge()){
+      Keyboard.set_modifier(MODIFIERKEY_CTRL);
+      Keyboard.send_now();
+      Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+      Keyboard.set_key1(KEY_V);
+      Keyboard.send_now();
     }
-
-    Keyboard.set_modifier(0);
-    Keyboard.set_key1(0);
-    Keyboard.send_now();
+    if (btn2.risingEdge()){
+      Keyboard.set_modifier(MODIFIERKEY_CTRL);
+      Keyboard.send_now();
+      Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+      Keyboard.set_key1(KEY_U);
+      Keyboard.send_now();
+    }
+    if (btn3.risingEdge()){
+      Keyboard.set_modifier(MODIFIERKEY_CTRL);
+      Keyboard.send_now();
+      Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+      Keyboard.set_key1(KEY_M);
+      Keyboard.send_now();
+    }          
+    if (btn4.risingEdge()){
+      Keyboard.set_modifier(MODIFIERKEY_CTRL);
+      Keyboard.send_now();
+      Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
+      Keyboard.set_key1(KEY_O);
+      Keyboard.send_now(); 
+    }      
+    break;
 
   }
 
-  int selectProfile(){
+  Keyboard.set_modifier(0);
+  Keyboard.set_key1(0);
+  Keyboard.send_now();
+
+}
+
+int selectProfile(){
 
 
-    int trimmer = 0;
+  int trimmer = 0;
   int threeshold = 256; //1023/4 = 255
 
   trimmer = analogRead(pinProfileSelector);
