@@ -1,8 +1,17 @@
 
+struct Profile {
+
+  char name[20];
+  char shorcut1[20];
+  char shorcut2[20];
+
+};
+
 // include the library code:
 #include <LiquidCrystal.h>
 #include <Bounce.h>
 #include <usb_keyboard.h>
+#include <string.h>
 
 int pinBtn1 = 15,pinBtn2 = 14, pinProfileSelector = A2;
 
@@ -16,7 +25,10 @@ Bounce btn2 = Bounce(pinBtn2,10);
 //Profile Selector
 int aktProfile,profile_number=2;
 
-String profile1 = "Arduino IDE", profile2 = "Inkscape";
+//String profile1 = "Arduino IDE", profile2 = "Inkscape";
+
+struct Profile profile1;
+struct Profile profile2;
 
 void setup() {
 
@@ -34,6 +46,18 @@ void setup() {
   delay(750);
   lcd.clear();
 
+//Add values to the struct
+
+//Initialize profiles
+
+//Profile1
+strcpy (profile1.name,"Arduino IDE");
+strcpy (profile1.shorcut1,"Compilate");
+strcpy (profile1.shorcut2,"Upload");
+//profile2
+strcpy (profile2.name,"Inkscape");
+strcpy (profile1.shorcut1,"test1");
+strcpy (profile1.shorcut2,"test2");
 }
 
 void loop() {
@@ -106,10 +130,12 @@ void printProfile(int aktProfile){
 
   switch (aktProfile) {
     case 1:
-    lcd.print(profile1);
+    lcd.print(profile1.name);
+    lcd.setCursor(0,1);
+    
     break;
     case 2:
-    lcd.print(profile2);
+    lcd.print(profile2.name);
     break;
   }
 }
