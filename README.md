@@ -1,6 +1,8 @@
 # Teensy-shortcuts
 
 This programm is a shorcut manager for applications on your computer.
+Up to 4 profiles (easy to implement more).
+Up to 6 buttons with display info of each one. It's really simple to add more, but without showing info in the LCD Screen.
 
 ## Hardware
 
@@ -9,12 +11,21 @@ Use a Teensy 3.1 board, pushbuttons and a LCD to display the current Profile.
 ## Usage
 
 The program is bassed on pushbuttons that send keyboard strokes on their rising edge.
-
+Just click the button and let the magic happend!
 ## Software supported
 
-1. Arduino IDE (Verify & upload).
+1. Arduino IDE:
+  1.  Verify
+  2.  Upload
+  3.  Monitor
+  4.  Auto Format
+2. Sublime Text 3 with Stino plugin :
+  1.  Verify
+  2.  Upload
+  3.  Monitor
+  4.  Auto Format
 
-## Add pushbuttons
+##How to: Add pushbuttons
 
 1. Connect the pushbutton to a digital pin. Use a pulldown resistror to pushbuttons.
 2. Create a Bounce objet to debounce the pushbutton:
@@ -25,13 +36,12 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
 <pre lang="arduino"><code>
   pinMode(*pinNumer or variable*,INPUT);
 </code></pre>
-4. At loop update the button, then watch for the risindEdge of that button and send keystrokes. ie:
+4. At <pre lang="Arduino">profileActions</pre> update the button, then watch for the risindEdge of that button and send keystrokes. ie:
 
 <pre lang="arduino"><code>
 
   btn1.update();
- 
-  
+   
   if (btn1.risingEdge()){
     Serial.println("risingEdge btn1");
     Keyboard.set_modifier(MODIFIERKEY_CTRL);
@@ -44,7 +54,22 @@ The program is bassed on pushbuttons that send keyboard strokes on their rising 
 
 ## Add program profile
 
--- To Do --
+Create a profile struct:
+<pre lang="arduino"><code>    
+  struct Profile profile1;
+</code></pre>
+
+Add profile name and shorcuts names:
+
+<pre lang="arduino"><code>    
+  strcpy (profile1.name,"Arduino IDE");
+  strcpy (profile1.shorcut1,"Verify");
+  strcpy (profile1.shorcut2,"Upload");
+  strcpy (profile1.shorcut3,"Monitor");
+  strcpy (profile1.shorcut4,"AutoFormat");
+</code></pre>
+
+Add shorcuts inside of <pre lang="arduino"><code>profileActions</code></pre> function
 
 ## Add shorcuts
 
