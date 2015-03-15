@@ -17,7 +17,7 @@ struct Profile {
 #include <usb_keyboard.h>
 #include <string.h>
 
-int pinBtn1 = 2,pinBtn2 = 3,pinBtn3 = 4, pinBtn4=5, pinProfileSelector = A2;
+int pinBtn1 = 0,pinBtn2 = 1,pinBtn3 = 2, pinBtn4=3,pinBtn5=4,pinBtn6=5, pinProfileSelector = A2;
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
@@ -27,6 +27,9 @@ Bounce btn1 = Bounce(pinBtn1,10);
 Bounce btn2 = Bounce(pinBtn2,10);
 Bounce btn3 = Bounce(pinBtn3,10);
 Bounce btn4 = Bounce(pinBtn4,10);
+Bounce btn5 = Bounce(pinBtn5,10);
+Bounce btn6 = Bounce(pinBtn6,10);
+
 //Profile Selector
 int aktProfile,profile_number=4;
 int lastProfile=0;
@@ -44,6 +47,8 @@ void setup() {
   pinMode(pinBtn2, INPUT_PULLUP);
   pinMode(pinBtn3, INPUT_PULLUP);
   pinMode(pinBtn4, INPUT_PULLUP);
+  pinMode(pinBtn5, INPUT_PULLUP);
+  pinMode(pinBtn6, INPUT_PULLUP);
   
   pinMode(pinProfileSelector, INPUT);
 
