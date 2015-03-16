@@ -1,6 +1,6 @@
 # Teensy-shortcuts
 
-This programm is a shorcut manager for applications on your computer.
+This programm is a shortcut manager for applications on your computer.
 Up to 4 profiles (easy to implement more).
 Up to 6 buttons with display info of each one. It's really simple to add more, but without showing info in the LCD Screen.
 
@@ -59,19 +59,19 @@ Create a profile struct:
   struct Profile profile1;
 </code></pre>
 
-Add profile name and shorcuts names:
+Add profile name and shortcuts names:
 
 <pre lang="arduino"><code>    
   strcpy (profile1.name,"Arduino IDE");
-  strcpy (profile1.shorcut1,"Verify");
-  strcpy (profile1.shorcut2,"Upload");
-  strcpy (profile1.shorcut3,"Monitor");
-  strcpy (profile1.shorcut4,"AutoFormat");
+  strcpy (profile1.shortcut1,"Verify");
+  strcpy (profile1.shortcut2,"Upload");
+  strcpy (profile1.shortcut3,"Monitor");
+  strcpy (profile1.shortcut4,"AutoFormat");
 </code></pre>
 
-Add shorcuts inside of <pre lang="arduino"><code>profileActions</code></pre> function
+Add shortcuts inside of <pre lang="arduino"><code>profileActions</code></pre> function
 
-##How to: Add shorcuts
+##How to: Add shortcuts
 
 Check out your favorite program shortcuts and know which key combination activate them, then go to [teensy keys](https://www.pjrc.com/teensy/td_keyboard.html) and look for your keys combination.
 
