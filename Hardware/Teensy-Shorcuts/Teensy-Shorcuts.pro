@@ -1,4 +1,4 @@
-update=Mon 16 Mar 2015 09:29:15 CET
+update=Mon 16 Mar 2015 12:17:44 CET
 version=1
 last_client=kicad
 [pcbnew]
@@ -29,9 +29,9 @@ version=1
 version=1
 LibDir=
 [eeschema/libraries]
-LibName1=/home/luis-diaz/Escritorio/git/usb keyboardteensy/Hardware/Libraries/teensy_3.1
-LibName2=/home/luis-diaz/Escritorio/git/usb keyboardteensy/Hardware/Libraries/LCD20x4
-LibName3=/Users/luisdiazugena/Desktop/github-projects/Teensy-shortcuts/Hardware/Libraries/LCD20x4
+LibName1=Libraries/trimmer
+LibName2=Libraries/teensy_3.1
+LibName3=Libraries/LCD20x4
 LibName4=power
 LibName5=device
 LibName6=transistors

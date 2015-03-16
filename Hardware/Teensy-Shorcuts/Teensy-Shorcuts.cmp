@@ -1,0 +1,150 @@
+Cmp-Mod V01 Created by Cvpcb (2015-03-05 BZR 5480)-product   date = Mon 16 Mar 2015 17:19:00 CET
+
+BeginCmp
+TimeStamp = /55056E32;
+Reference = DS1;
+ValeurCmp = LCD20x4;
+IdModule  = Libraries:LCD20X4;
+EndCmp
+
+BeginCmp
+TimeStamp = /5506F6D0;
+Reference = P1;
+ValeurCmp = CONN_01X01;
+IdModule  = Libraries:Jumper1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5506F720;
+Reference = P2;
+ValeurCmp = CONN_01X01;
+IdModule  = Libraries:Jumper1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5506F5C9;
+Reference = P3;
+ValeurCmp = CONN_01X01;
+IdModule  = Libraries:Jumper1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /5506F76C;
+Reference = P4;
+ValeurCmp = CONN_01X01;
+IdModule  = Libraries:Jumper1x01;
+EndCmp
+
+BeginCmp
+TimeStamp = /550562CE;
+Reference = R1;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /55056305;
+Reference = R2;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /5505632B;
+Reference = R3;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /55056352;
+Reference = R4;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /550576F6;
+Reference = R5;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /550578E8;
+Reference = R6;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /55071907;
+Reference = R7;
+ValeurCmp = 10KΩ;
+IdModule  = Libraries:Res;
+EndCmp
+
+BeginCmp
+TimeStamp = /5506C107;
+Reference = RV2;
+ValeurCmp = 5KΩ;
+IdModule  = Libraries:trimmer;
+EndCmp
+
+BeginCmp
+TimeStamp = /55056234;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /55056256;
+Reference = SW2;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /55056277;
+Reference = SW3;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /550576AF;
+Reference = SW4;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /55057826;
+Reference = SW5;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /55056201;
+Reference = SW6;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /55071901;
+Reference = SW7;
+ValeurCmp = SW_PUSH;
+IdModule  = Libraries:Switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /5506970B;
+Reference = U1;
+ValeurCmp = Teensy_3.1;
+IdModule  = Libraries:Teensy-3.1;
+EndCmp
+
+EndListe
