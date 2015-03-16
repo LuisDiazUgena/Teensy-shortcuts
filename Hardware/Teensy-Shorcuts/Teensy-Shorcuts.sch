@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:teensy_3.1
 LIBS:LCD20x4
 LIBS:power
 LIBS:device
@@ -250,13 +251,13 @@ Text GLabel 5200 1800 3    40   Input ~ 0
 Wire Wire Line
 	5200 1800 5200 1700
 Text GLabel 5700 1800 3    40   Input ~ 0
-11
+10
 Text GLabel 5800 1800 3    40   Input ~ 0
-11
+9
 Text GLabel 5900 1800 3    40   Input ~ 0
-11
+8
 Text GLabel 6000 1800 3    40   Input ~ 0
-11
+7
 Wire Wire Line
 	5700 1800 5700 1700
 Wire Wire Line
@@ -366,4 +367,71 @@ Text GLabel 2000 4600 1    60   Input ~ 0
 A2
 Wire Wire Line
 	2000 4600 2000 4800
+$Comp
+L Teensy_3.1 U?
+U 1 1 5506970B
+P 8250 4200
+F 0 "U?" H 8300 5250 60  0000 C CNN
+F 1 "Teensy_3.1" H 8350 5700 60  0000 C CNN
+F 2 "" H 8350 4200 60  0000 C CNN
+F 3 "" H 8350 4200 60  0000 C CNN
+	1    8250 4200
+	1    0    0    -1  
+$EndComp
+Text GLabel 7050 4850 0    40   Input ~ 0
+12
+Text GLabel 7050 4700 0    40   Input ~ 0
+11
+Text GLabel 7050 4550 0    40   Input ~ 0
+10
+Text GLabel 7050 4400 0    40   Input ~ 0
+9
+Text GLabel 7050 4250 0    40   Input ~ 0
+8
+Text GLabel 7050 4100 0    40   Input ~ 0
+7
+Wire Wire Line
+	7050 4100 7250 4100
+Wire Wire Line
+	7250 4250 7050 4250
+Wire Wire Line
+	7050 4400 7250 4400
+Wire Wire Line
+	7250 4550 7050 4550
+Wire Wire Line
+	7250 4700 7050 4700
+Wire Wire Line
+	7250 4850 7050 4850
+Text GLabel 7050 3800 0    60   Input ~ 0
+D5
+Text GLabel 7050 3650 0    60   Input ~ 0
+D4
+Text GLabel 7050 3500 0    60   Input ~ 0
+D3
+Text GLabel 7050 3350 0    60   Input ~ 0
+D2
+Text GLabel 7050 3200 0    60   Input ~ 0
+D1
+Text GLabel 7050 3050 0    60   Input ~ 0
+D0
+Wire Wire Line
+	7250 3800 7050 3800
+Wire Wire Line
+	7050 3650 7250 3650
+Wire Wire Line
+	7250 3500 7050 3500
+Wire Wire Line
+	7050 3350 7250 3350
+Wire Wire Line
+	7250 3200 7050 3200
+Wire Wire Line
+	7050 3050 7250 3050
+Text GLabel 7050 2900 0    60   Input ~ 0
+GND
+Wire Wire Line
+	7050 2900 7250 2900
+Text GLabel 9450 4550 2    60   Input ~ 0
+A2
+Wire Wire Line
+	9450 4550 9250 4550
 $EndSCHEMATC
