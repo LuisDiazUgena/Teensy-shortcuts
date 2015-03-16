@@ -1,6 +1,6 @@
 /*
 
-USB keyboard shorcut manager
+USB keyboard shortcut manager
 Teensy 3.1 working as usb keyboard
 Luis Diaz
 
@@ -9,16 +9,16 @@ Luis Diaz
 struct Profile {
 
   char name[20];
-  char shorcut1[10];
-  char shorcut2[10];
-  char shorcut3[10];
-  char shorcut4[10];
-  char shorcut5[10];
-  char shorcut6[10];
+  char shortcut1[10];
+  char shortcut2[10];
+  char shortcut3[10];
+  char shortcut4[10];
+  char shortcut5[10];
+  char shortcut6[10];
 
 };
 
-// include the library code:
+//Libraries
 #include <LiquidCrystal.h>
 #include <Bounce.h>
 #include <usb_keyboard.h>
@@ -66,7 +66,7 @@ void setup() {
   lcd.begin(20,4);
 
   // Print a message to the LCD.
-  lcd.print("Teensy Shorcuts!");
+  lcd.print("Teensy shortcuts!");
   lcd.setCursor(0,3);
   lcd.print("Luis Diaz");
   delay(1000);
@@ -78,32 +78,32 @@ void setup() {
 
 //Profile1
 strcpy (profile1.name,"Arduino IDE");
-strcpy (profile1.shorcut1,"Verify");
-strcpy (profile1.shorcut2,"Upload");
-strcpy (profile1.shorcut3,"Monitor");
-strcpy (profile1.shorcut4,"AutoFormat");
+strcpy (profile1.shortcut1,"Verify");
+strcpy (profile1.shortcut2,"Upload");
+strcpy (profile1.shortcut3,"Monitor");
+strcpy (profile1.shortcut4,"AutoFormat");
 
 //profile2
 strcpy (profile2.name,"Sublime 3");
-strcpy (profile2.shorcut1,"Verify");
-strcpy (profile2.shorcut2,"Upload");
-strcpy (profile2.shorcut3,"Monitor");
-strcpy (profile2.shorcut4,"AutoFormat");
+strcpy (profile2.shortcut1,"Verify");
+strcpy (profile2.shortcut2,"Upload");
+strcpy (profile2.shortcut3,"Monitor");
+strcpy (profile2.shortcut4,"AutoFormat");
 
 
 //profile3
 strcpy (profile3.name,"Profile3");
-strcpy (profile3.shorcut1,"test1");
-strcpy (profile3.shorcut2,"test2");
-strcpy (profile3.shorcut3,"test3");
-strcpy (profile3.shorcut4,"test4");
+strcpy (profile3.shortcut1,"test1");
+strcpy (profile3.shortcut2,"test2");
+strcpy (profile3.shortcut3,"test3");
+strcpy (profile3.shortcut4,"test4");
 //profile4
 strcpy (profile4.name,"Profile4");
-strcpy (profile4.shorcut1,"test1");
-strcpy (profile4.shorcut2,"test2");
-strcpy (profile4.shorcut3,"test3");
-strcpy (profile4.shorcut4,"test4");
-strcpy (profile4.shorcut6,"test6");
+strcpy (profile4.shortcut1,"test1");
+strcpy (profile4.shortcut2,"test2");
+strcpy (profile4.shortcut3,"test3");
+strcpy (profile4.shortcut4,"test4");
+strcpy (profile4.shortcut6,"test6");
 
 }
 
@@ -220,63 +220,63 @@ void printProfile(int aktProfile){
     case 1:
     lcd.print(profile1.name);
     lcd.setCursor(0,1);
-    lcd.print(profile1.shorcut1);
+    lcd.print(profile1.shortcut1);
     lcd.setCursor(10,1);
-    lcd.print(profile1.shorcut2);
+    lcd.print(profile1.shortcut2);
     lcd.setCursor(0,2);
-    lcd.print(profile1.shorcut3);
+    lcd.print(profile1.shortcut3);
     lcd.setCursor(10,2);
-    lcd.print(profile1.shorcut4);
+    lcd.print(profile1.shortcut4);
     lcd.setCursor(0,3);
-    lcd.print(profile1.shorcut5);
+    lcd.print(profile1.shortcut5);
     lcd.setCursor(10,3);
-    lcd.print(profile1.shorcut6);
+    lcd.print(profile1.shortcut6);
     break;
     case 2:
     lcd.print(profile2.name);
     lcd.setCursor(0,1);
-    lcd.print(profile2.shorcut1);
+    lcd.print(profile2.shortcut1);
     lcd.setCursor(10,1);
-    lcd.print(profile2.shorcut2);
+    lcd.print(profile2.shortcut2);
     lcd.setCursor(0,2);
-    lcd.print(profile2.shorcut3);
+    lcd.print(profile2.shortcut3);
     lcd.setCursor(10,2);
-    lcd.print(profile2.shorcut4);
+    lcd.print(profile2.shortcut4);
     lcd.setCursor(0,3);
-    lcd.print(profile2.shorcut5);
+    lcd.print(profile2.shortcut5);
     lcd.setCursor(10,3);
-    lcd.print(profile2.shorcut6);
+    lcd.print(profile2.shortcut6);
 
     break;
     case 3:
     lcd.print(profile3.name);
     lcd.setCursor(0,1);
-    lcd.print(profile3.shorcut1);
+    lcd.print(profile3.shortcut1);
     lcd.setCursor(10,1);
-    lcd.print(profile3.shorcut2);
+    lcd.print(profile3.shortcut2);
     lcd.setCursor(0,2);
-    lcd.print(profile3.shorcut3);
+    lcd.print(profile3.shortcut3);
     lcd.setCursor(10,2);
-    lcd.print(profile3.shorcut4);
+    lcd.print(profile3.shortcut4);
     lcd.setCursor(0,3);
-    lcd.print(profile3.shorcut5);
+    lcd.print(profile3.shortcut5);
     lcd.setCursor(10,3);
-    lcd.print(profile3.shorcut6);
+    lcd.print(profile3.shortcut6);
     break;
     case 4:
     lcd.print(profile4.name);
     lcd.setCursor(0,1);
-    lcd.print(profile4.shorcut1);
+    lcd.print(profile4.shortcut1);
     lcd.setCursor(10,1);
-    lcd.print(profile4.shorcut2);
+    lcd.print(profile4.shortcut2);
     lcd.setCursor(0,2);
-    lcd.print(profile4.shorcut3);
+    lcd.print(profile4.shortcut3);
     lcd.setCursor(10,2);
-    lcd.print(profile4.shorcut4);
+    lcd.print(profile4.shortcut4);
     lcd.setCursor(0,3);
-    lcd.print(profile4.shorcut5);
+    lcd.print(profile4.shortcut5);
     lcd.setCursor(10,3);
-    lcd.print(profile4.shorcut6);
+    lcd.print(profile4.shortcut6);
 
     break;      
   }
