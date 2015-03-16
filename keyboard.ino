@@ -1,4 +1,11 @@
+/*
 
+USB keyboard shorcut manager
+Teensy 3.1 working as usb keyboard
+Luis Diaz
+
+
+*/
 struct Profile {
 
   char name[20];
