@@ -17,7 +17,8 @@ struct Profile {
 #include <usb_keyboard.h>
 #include <string.h>
 
-int pinBtn1 = 0,pinBtn2 = 1,pinBtn3 = 2, pinBtn4=3,pinBtn5=4,pinBtn6=5, pinProfileSelector = A2;
+int pinBtn1 = 0,pinBtn2 = 1,pinBtn3 = 2, pinBtn4=3,pinBtn5=4,pinBtn6=5;
+int pinPS = 15;
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
@@ -29,9 +30,10 @@ Bounce btn3 = Bounce(pinBtn3,10);
 Bounce btn4 = Bounce(pinBtn4,10);
 Bounce btn5 = Bounce(pinBtn5,10);
 Bounce btn6 = Bounce(pinBtn6,10);
+Bounce btnPS = Bounce(pinPS,10);
 
 //Profile Selector
-int aktProfile,profile_number=4;
+int aktProfile=1, profile_number=4;
 int lastProfile=0;
 
 //Profiles
@@ -49,8 +51,9 @@ void setup() {
   pinMode(pinBtn4, INPUT_PULLUP);
   pinMode(pinBtn5, INPUT_PULLUP);
   pinMode(pinBtn6, INPUT_PULLUP);
+  pinMode(pinPS,INPUT_PULLUP);
   
-  pinMode(pinProfileSelector, INPUT);
+  //pinMode(pinProfileSelector, INPUT);
 
   // set up the LCD's number of columns and rows: 
   lcd.begin(20,4);
@@ -80,7 +83,7 @@ strcpy (profile2.shorcut2,"Upload");
 strcpy (profile2.shorcut3,"Monitor");
 strcpy (profile2.shorcut4,"AutoFormat");
 
-/*
+
 //profile3
 strcpy (profile3.name,"Profile3");
 strcpy (profile3.shorcut1,"test1");
@@ -94,16 +97,27 @@ strcpy (profile4.shorcut2,"test2");
 strcpy (profile4.shorcut3,"test3");
 strcpy (profile4.shorcut4,"test4");
 strcpy (profile4.shorcut6,"test6");
-*/
+
 }
 
 void loop() {
 
-  aktProfile = selectProfile();
+
+  btnPS.update();
+
+  if (btnPS.risingEdge()){
+    Serial.println("NextProfile");
+    aktProfile++;
+    if (aktProfile > profile_number){
+      aktProfile=1;
+    }
+  }
+
   printProfile(aktProfile);
   profileActions(aktProfile);
 
 }
+//
 
 void profileActions(int aktProfile){
 
@@ -111,6 +125,9 @@ void profileActions(int aktProfile){
   btn2.update();
   btn3.update();
   btn4.update();
+  btn5.update();
+  btn6.update();
+
 
   switch (aktProfile) {
     case 1:
@@ -177,28 +194,7 @@ void profileActions(int aktProfile){
 
 }
 
-int selectProfile(){
-
-
-  int trimmer = 0;
-  int threeshold = 256; //1023/4 = 255
-
-  trimmer = analogRead(pinProfileSelector);
-  
-  if (trimmer < threeshold){
-    return 1;
-    }else if(trimmer < 2*threeshold){
-      return 2;
-      }else if(trimmer < 3*threeshold){
-        return 3;
-        }else{
-          return 4;
-        }
-
-
-      }
-
-      void printProfile(int aktProfile){
+void printProfile(int aktProfile){
 
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
