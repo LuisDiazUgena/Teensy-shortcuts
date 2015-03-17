@@ -2,7 +2,7 @@
 
 USB keyboard shortcut manager
 Teensy 3.1 working as usb keyboard
-Luis Diaz
+Luis Diazains...
 
 
 */
