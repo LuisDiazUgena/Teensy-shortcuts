@@ -40,7 +40,7 @@ Bounce btn6 = Bounce(pinBtn6, 10);
 Bounce btnPS = Bounce(pinPS, 10);
 
 //Profile Selector
-int aktProfile = 1, lastProfile = 0;
+int aktProfile = 2, lastProfile = 0;
 int profile_number = 2;
 
 //Profiles
