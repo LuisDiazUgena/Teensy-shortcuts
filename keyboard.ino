@@ -90,13 +90,14 @@ void setup() {
   strcpy (profile2.shortcut3, "Monitor");
   strcpy (profile2.shortcut4, "AutoFormat");
 
-  /*
+  
   //profile3
-  strcpy (profile3.name,"Profile3");
-  strcpy (profile3.shortcut1,"test1");
+  strcpy (profile3.name,"Text Edittor");
+  strcpy (profile3.shortcut1,"pre Arduino");
   strcpy (profile3.shortcut2,"test2");
   strcpy (profile3.shortcut3,"test3");
   strcpy (profile3.shortcut4,"test4");
+  /*
   //profile4
   strcpy (profile4.name,"Profile4");
   strcpy (profile4.shortcut1,"test1");
