@@ -41,7 +41,7 @@ Bounce btnPS = Bounce(pinPS, 10);
 
 //Profile Selector
 int aktProfile = 2, lastProfile = 0;
-int profile_number = 2;
+int profile_number = 3;
 
 //Profiles
 
@@ -85,27 +85,19 @@ void setup() {
 
 //profile2
   strcpy (profile2.name, "Sublime 3");
-  strcpy (profile2.shortcut1, "Verify");
+  strcpy (profile2.shortcut1, "Fold All");
   strcpy (profile2.shortcut2, "Upload");
   strcpy (profile2.shortcut3, "Monitor");
   strcpy (profile2.shortcut4, "AutoFormat");
 
-  
+
   //profile3
-  strcpy (profile3.name,"Text Edittor");
-  strcpy (profile3.shortcut1,"pre Arduino");
-  strcpy (profile3.shortcut2,"test2");
-  strcpy (profile3.shortcut3,"test3");
-  strcpy (profile3.shortcut4,"test4");
-  /*
-  //profile4
-  strcpy (profile4.name,"Profile4");
-  strcpy (profile4.shortcut1,"test1");
-  strcpy (profile4.shortcut2,"test2");
-  strcpy (profile4.shortcut3,"test3");
-  strcpy (profile4.shortcut4,"test4");
-  strcpy (profile4.shortcut6,"test6");
-  */
+  strcpy (profile3.name, "Html Edittor");
+  strcpy (profile3.shortcut1, "h2");
+  strcpy (profile3.shortcut2, "em");
+  strcpy (profile3.shortcut3, "strong");
+  strcpy (profile3.shortcut4, "pre Arduin");
+
 }
 
 void loop() {
@@ -138,6 +130,7 @@ void profileActions(int aktProfile) {
 
 
   switch (aktProfile) {
+  // Profile 1
   case 1:
 
     if (btn1.risingEdge()) {
@@ -163,12 +156,13 @@ void profileActions(int aktProfile) {
       Keyboard.send_now();
     }
     break;
+  // Profile 2
   case 2:
     if (btn1.risingEdge()) {
       Keyboard.set_modifier(MODIFIERKEY_CTRL);
       Keyboard.send_now();
-      Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_ALT );
-      Keyboard.set_key1(KEY_V);
+      Keyboard.set_modifier(MODIFIERKEY_CTRL | MODIFIERKEY_SHIFT );
+      Keyboard.set_key1(KEY_D);
       Keyboard.send_now();
     }
     if (btn2.risingEdge()) {
@@ -195,6 +189,30 @@ void profileActions(int aktProfile) {
       Keyboard.send_now();
     }
     break;
+  // Profile 3
+  case 3:
+
+    // Strings profile3
+    //String header = "<h2></h2>", em = "<em></em>", pre = "<pre lang=", pre1 = "arduino", pre2 = "></pre>", strong = "<strong></strong>";
+
+    if (btn1.risingEdge()) {
+      Keyboard.print("<h2></h2>");
+      goingBack(5);
+    }
+
+    if (btn2.risingEdge()) {
+      Keyboard.print("<em></em>");
+      goingBack(5);
+    }
+    
+    if (btn3.risingEdge()) {
+      Keyboard.print("<strong></strong>");
+      goingBack(9);
+    }
+    if (btn4.risingEdge()) {
+      Keyboard.print("<pre lang=\"arduino\"></pre>");
+      goingBack(6);
+    }
 
   }
 
@@ -202,6 +220,23 @@ void profileActions(int aktProfile) {
   Keyboard.set_key1(0);
   Keyboard.send_now();
 
+}
+
+void goingBack(int pos) {
+
+  int aktPos;
+  
+  for (aktPos = 0; aktPos < pos ; aktPos++) {
+    Keyboard.set_key1(KEY_LEFT);
+    Keyboard.send_now();
+    Keyboard.set_modifier(0);
+    Keyboard.set_key1(0);
+    Keyboard.send_now();
+  }
+
+  Keyboard.set_modifier(0);
+  Keyboard.set_key1(0);
+  Keyboard.send_now();
 }
 
 void printProfile(int aktProfile) {
