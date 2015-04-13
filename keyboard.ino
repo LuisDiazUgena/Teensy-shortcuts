@@ -92,7 +92,7 @@ void setup() {
 
 
   //profile3
-  strcpy (profile3.name, "Html Edittor");
+  strcpy (profile3.name, "Html Editor");
   strcpy (profile3.shortcut1, "h2");
   strcpy (profile3.shortcut2, "em");
   strcpy (profile3.shortcut3, "strong");
@@ -193,24 +193,24 @@ void profileActions(int aktProfile) {
   case 3:
 
     // Strings profile3
-    //String header = "<h2></h2>", em = "<em></em>", pre = "<pre lang=", pre1 = "arduino", pre2 = "></pre>", strong = "<strong></strong>";
+    String header = "<h2></h2>", italic = "<em></em>", preArduino = "<pre lang=\"arduino\"></pre>", strong = "<strong></strong>";
 
     if (btn1.risingEdge()) {
-      Keyboard.print("<h2></h2>");
+      Keyboard.print(header);
       goingBack(5);
     }
 
     if (btn2.risingEdge()) {
-      Keyboard.print("<em></em>");
+      Keyboard.print(italic);
       goingBack(5);
     }
     
     if (btn3.risingEdge()) {
-      Keyboard.print("<strong></strong>");
+      Keyboard.print(strong);
       goingBack(9);
     }
     if (btn4.risingEdge()) {
-      Keyboard.print("<pre lang=\"arduino\"></pre>");
+      Keyboard.print(preArduino);
       goingBack(6);
     }
 
@@ -234,9 +234,6 @@ void goingBack(int pos) {
     Keyboard.send_now();
   }
 
-  Keyboard.set_modifier(0);
-  Keyboard.set_key1(0);
-  Keyboard.send_now();
 }
 
 void printProfile(int aktProfile) {
